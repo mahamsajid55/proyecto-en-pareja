@@ -1,0 +1,78 @@
+
+              /*
+    INTRO
+    - Ubicacion del script. Abajo antes del cierre de la etiqueta del body
+
+    OBJETIVO
+   - Cambiar el css de body con una apariencia de noche/dia
+    SCRIPTS
+     Modelo A
+    - Onclick en etiqueta
+    - Funciones en el script
+    - Acceso al CSS desde javascript
+     MODELO B
+    - Acceso al CSS con metodos de clases (add, toggle)
+    - Objeto Event. Captura del ID
+   
+    AMBITOS IMPLICADOS
+    -Eventos
+    -DOM
+    -Funciones
+    -Metodos acceso CSS
+   
+   
+   */
+      // Modelo A
+       /*
+         function apariencia(){
+
+               // alert("Dia y noche");
+
+          const botonApariencia=document.getElementById("btn1");
+          const cuerpopagina=document.querySelector("body");
+          const contenedor=document.querySelector(".contenedor");
+
+          cuerpopagina.style.backgroundColor="black";
+          contenedor.style.opacity="0.4";
+          botonApariencia.style.color="white";
+
+          botonApariencia.style.opacity="1";
+          botonApariencia.innerText="Dia";
+          
+         }
+            */
+     
+            /*MODELO B*/
+            function apariencia (event){
+
+                console.log(event); //el objeto event, recoge los datos del evento y los muestra en console.
+               
+               let idBoton= event.target.id;
+               let nombreBoton=event.target.nodeName;
+               
+               // alert(idBoton+"  "+nombreBoton);
+               
+               
+               const botonApariencia=document.getElementById(idBoton);
+               const cuerpoPagina=document.querySelector("body");
+               const contenedor=document.querySelector(".contenedor");
+               
+               cuerpoPagina.classList.toggle("noche_body");
+               contenedor.classList.toggle("noche_contenedor");
+               botonApariencia.classList.toggle("noche_boton");
+               
+               
+               let estadoBoton=botonApariencia.innerText; /*le pregunto al boton cuál es su inner text para almacenarlo en una variable*/
+               /* alert(estadoBoton);*/
+               botonApariencia.innerText="DÍA";
+               
+               if(estadoBoton=="DÍA"){ /*hay que poner == (estrictamente igual)*/
+                 botonApariencia.innerText="NOCHE"
+               };
+               
+               if(estadoBoton=="NOCHE"){
+                 botonApariencia.innerText="DÍA"
+               };
+               
+               }
+                  

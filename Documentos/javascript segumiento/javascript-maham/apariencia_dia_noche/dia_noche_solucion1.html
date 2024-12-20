@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style_solucion_1.css"
+
+    <style>
+      
+    </style>
+  </head>
+  <body>
+    <div class="contenedor">
+      <nav>
+        <ul>
+          <li>Inicio</li>
+          <li>Productos</li>
+          <li>Contacto</li>
+        </ul>
+      </nav>
+      <header>
+        <h1>Pagina de Repaso</h1>
+        <div></div>
+        <div></div>
+        <div></div>
+      </header>
+      <div class="content">
+        <main>
+          <button id="btn1"Onclick="apariencia()" >NOCHE</button>
+        </main>
+        <aside>
+          <form action="cliente.html" method="get">
+            <legend>Logueo-Registro</legend>
+            <p></p>
+
+            <input type="text" name="nombre" /> Nombre
+            <p></p>
+
+            <input type="text" name="apellido" /> Apellido
+            <p></p>
+
+            <input type="password" /> Contraseña
+            <p></p>
+            <input type="text" name="edad" /> Edad
+            <p></p>
+
+            <button type="submit">ENVIAR</button>
+          </form>
+        </aside>
+      </div>
+
+      <footer></footer>
+    </div>
+
+    <script>
+
+              /*
+    INTRO
+    - Ubicacion del script. Abajo antes del cierre de la etiqueta del body
+
+    OBJETIVO
+   - Cambiar el css de body con una apariencia de noche/dia
+    SCRIPTS
+     Modelo A
+    - Onclick en etiqueta
+    - Funciones en el script
+    - Acceso al CSS desde javascript
+     MODELO B
+    - Acceso al CSS con metodos de clases (add, toggle)
+    - Objeto Event. Captura del ID
+   
+    AMBITOS IMPLICADOS
+    -Eventos
+    -DOM
+    -Funciones
+    -Metodos acceso CSS
+   
+   
+   */
+         function apariencia(){
+
+               // alert("Dia y noche");
+
+          const botonApariencia=document.getElementById("btn1");
+          const cuerpopagina=document.querySelector("body");
+          const contenedor=document.querySelector(".contenedor");
+
+          cuerpopagina.style.backgroundColor="black";
+          contenedor.style.opacity="0.4";
+          botonApariencia.style.color="white";
+
+          botonApariencia.style.opacity="1";
+          botonApariencia.innerText="Dia";
+          
+         }
+         
+
+    
+    </script>
+  </body>
+</html>
